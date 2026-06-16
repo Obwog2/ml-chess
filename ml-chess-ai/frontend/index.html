@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Machine Learning Chess AI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/css/chessboard-1.0.0.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Machine Learning Chess AI</h1>
+      <div id="status" class="status">White's turn</div>
+    </header>
+
+    <div class="game-area">
+      <div class="side-panel left-panel">
+        <div class="panel-box">
+          <h3>Captured</h3>
+          <div id="captured-black" class="captured-pieces"></div>
+          <div class="material-advantage" id="advantage-black"></div>
+        </div>
+        <div class="panel-box">
+          <h3>AI Info</h3>
+          <div class="ai-info">
+            <span class="ai-info-label">Engine:</span>
+            <span id="ai-engine">Minimax (depth 3)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-wrapper">
+        <div id="board"></div>
+      </div>
+
+      <div class="side-panel right-panel">
+        <div class="panel-box">
+          <h3>Captured</h3>
+          <div id="captured-white" class="captured-pieces"></div>
+          <div class="material-advantage" id="advantage-white"></div>
+        </div>
+        <div class="panel-box">
+          <h3>Move History</h3>
+          <div id="move-history" class="move-history"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="resetGame()" class="btn btn-primary">New Game</button>
+      <button onclick="undoMove()" class="btn btn-secondary" id="undo-btn" disabled>Undo</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/www/js/chessboard-1.0.0.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
